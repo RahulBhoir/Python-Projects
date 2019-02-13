@@ -1,27 +1,38 @@
-class ClassA(): 
-    def __init__(self): 
-        self.var1 = 1
-        self.var2 = 2
-  
-    def methodA(self): 
-        self.var1 = self.var1 + self.var2 
-        return self.var1 
-  
-class ClassB(ClassA): 
-    def __init__(self, class_a): 
-        self.var1 = class_a.var1 
-        self.var2 = class_a.var2 
-  
-object1 = ClassA() 
-# updates the value of var1 
-summ = object1.methodA() 
-  
-# return the value of var1 
-print (summ) 
-  
-# passes object of classA 
-object2 = ClassB(object1) 
-  
-# return the values carried by var1,var2 
-print (object2.var1) 
-print (object2.var2)
+choice = 1
+while choice != 10:
+    choice = int(input("1. Additive encrypt\n2. Additive decrypt\nSelect from above options: "))
+
+    if choice is 1:
+        # encrypt
+        pt = input("enter the plain text: ")
+        key = int(input("enter the key: "))
+        pt = list(pt)
+        ct = ""
+        print()
+        for x in pt:
+            if x.isupper():     # uppercase characters
+                temp = (( ord(x) - 65 + key) % 26) + 65     # E = (x + n)mod 26
+                ct += chr(temp)
+            if x.islower():     # lowercase characters
+                temp = (( ord(x) - 97 + key) % 26) + 97
+                ct += chr(temp)
+        print("Decrypted text is: ",ct)
+        print()
+
+    elif choice is 2:
+        # decrypt
+        ct = input("enter the cipher text: ")
+        key = int(input("enter the key: "))
+        ct = list(ct)
+        pt = ""
+        print()
+        for x in ct:
+            if x.isupper():     # uppercase characters
+                temp = (( ord(x) - 65 - key) % 26) + 65     # E = (x - n)mod 26
+                pt += chr(temp)
+            if x.islower():     # lowercase characters
+                temp = (( ord(x) - 97 - key) % 26) + 97
+                pt += chr(temp)
+        print("Encrypted text is: ",pt)
+        print()
+    choice = input("To exit press 10 / TO continue press 1: ")
