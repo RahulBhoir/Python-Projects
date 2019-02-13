@@ -35,4 +35,4 @@ while choice != 10:
                 pt += chr(temp)
         print("Encrypted text is: ",pt)
         print()
-    choice = input("To exit press 10 / TO continue press 1: ")
+    choice = int(input("To exit press 10 / TO continue press 1: "))
