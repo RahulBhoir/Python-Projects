@@ -36,3 +36,4 @@ while choice != 10:
         print("Encrypted text is: ",pt)
         print()
     choice = int(input("To exit press 10 / TO continue press 1: "))
+
