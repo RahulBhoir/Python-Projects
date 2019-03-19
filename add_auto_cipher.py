@@ -25,7 +25,7 @@ while choice != -1:
                     temp = (( ord(x) - 97 + key) % 26) + 97
                     ct += chr(temp)
             print("Encrypted text is: ",ct)
-            print()
+            print("\n",20*"=","\n")
 
         elif choice is 2:
             # decrypt
@@ -42,7 +42,7 @@ while choice != -1:
                     temp = (( ord(x) - 97 - key) % 26) + 97
                     pt += chr(temp)
             print("Decrypted text is: ",pt)
-            print()
+            print("\n",20*"=","\n")
 
     elif choice is 2:
         choice = int(input("1.encrypt\n2.decrypt\nenter your choice: "))
@@ -69,7 +69,7 @@ while choice != -1:
                 temp = (pt1 + ks1) % 26
                 ct += chr(temp + 97)
             print("The encrypted text is : ", ct)
-            print()
+            print("\n",20*"=","\n")
 
         elif choice == 2:
 
@@ -92,6 +92,6 @@ while choice != -1:
                 pt1 = ord(ct[x]) - 97
                 temp = (pt1 + 26 - ks1) % 26
                 pt += chr(temp + 97)
-            print("The decrypted text is: ", pt)
-            print()
+            print("The decrypted text is: ",pt)
+            print("\n",20*"=","\n")
 
