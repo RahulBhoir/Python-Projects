@@ -1,47 +1,44 @@
-def encryplain_textion():
-    plain_text = 'rahul'  # input("enter the plain text: ")
-    key = 5  # int(input("enter the key: "))
-    plain_text = list(plain_text)
+def encryption():
+    pt = input("enter the plain text: ")
+    key = int(input("enter the key: "))
+    pt = list(pt)
     cypher_text = ""
     print()
-    for x in plain_text:
-        if x.isupper():     # uppercase characypher_texters
+    for x in pt:
+        if x.isupper():
             # E = (x + n)mod 26
             temp = ((ord(x) - 65 + key) % 26) + 65
             cypher_text += chr(temp)
-        if x.islower():     # lowercase characypher_texters
+        if x.islower():
             temp = ((ord(x) - 97 + key) % 26) + 97
             cypher_text += chr(temp)
     return cypher_text
 
 
-def decryplain_textion():
+def decryption():
     cypher_text = input("enter the cipher text: ")
     key = int(input("enter the key: "))
     cypher_text = list(cypher_text)
-    plain_text = ""
+    pt = ""
     print()
     for x in cypher_text:
-        if x.isupper():     # uppercase characypher_texters
-            temp = ((ord(x) - 65 - key) % 26) + 65     # E = (x - n)mod 26
-            plain_text += chr(temp)
-        if x.islower():     # lowercase characypher_texters
+        if x.isupper():
+            # E = (x - n)mod 26
+            temp = ((ord(x) - 65 - key) % 26) + 65
+            pt += chr(temp)
+        if x.islower():
             temp = ((ord(x) - 97 - key) % 26) + 97
-            plain_text += chr(temp)
-    return plain_text
+            pt += chr(temp)
+    return pt
 
 
 choice = 1
 while choice != 10:
-    # int(input("1. Additive encryplain_text\n2. Additive decryplain_text\nSelecypher_text from above oplain_textions: "))
-    choice = 1
+    choice = int(input(
+        "1. Additive encrypt\n2. Additive decrypt\nSelecypher_text from above options: "))
 
     if choice is 1:
-        # encrypt plain_text
-
-        print("Decryplain_texted text is: ", encryplain_textion())
-        print()
+        print(f"Encrypted text is: {encryption()} \n")
     elif choice is 2:
-        # decrypt cypher_text
-        print(f"Encryplain_texted text is: {decryplain_textion()}")
+        print(f"Decrypted text is: {decryption()} \n")
     choice = int(input("To exit press 10 / TO continue press 1: "))
