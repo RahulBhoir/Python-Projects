@@ -1,13 +1,13 @@
 # 100 Projects: Python
 
 ## GUI
-1. Calculator: using tkinter and basic python
+1. Calculator
 
 ## Scripts
 2. Cryptograhpy algorithms
 
 ## Django
-3. Pyshop: Introduction to django
+3. Pyshop: *Introduction to Django*
 4. Todo List
-5. Creative Minds: Blog Posting website
-6. Password Safe: Website for storing username and passwords 
+5. Creative Minds: *Blog posting website*
+6. Password Safe: *Website for storing username and passwords*
