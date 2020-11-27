@@ -1,10 +1,13 @@
 # 100 Projects: Python
 
+## Scripts
+1. Band Name Generator
+2. Love Calculator
+3. BMI Calculator
+4. Cryptograhpy algorithms
+
 ## GUI
 1. Calculator
-
-## Scripts
-2. Cryptograhpy algorithms
 
 ## Django
 3. Pyshop: *Introduction to Django*

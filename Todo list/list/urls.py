@@ -19,7 +19,7 @@ from todo_list.views import todoList, addTodo, deleteTodo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todo/', todoList),
-    path('addTodo/', addTodo),
-    path('deleteTodo/<int:item_id>/', deleteTodo)
+    path('', todoList, name='list'),
+    path('addTodo/', addTodo, name='add_to_list'),
+    path('deleteTodo/<int:item_id>/', deleteTodo, name='delete_item')
 ]

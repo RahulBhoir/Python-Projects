@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import TodoItems
 from django.http import HttpResponseRedirect
+from django.urls import reverse
 # Create your views here.
 
 
@@ -13,10 +14,10 @@ def addTodo(request):
     item = request.POST['content']
     add_item = TodoItems(content=item)
     add_item.save()
-    return HttpResponseRedirect('/todo/')
+    return redirect(reverse('list'))
 
 
 def deleteTodo(request, item_id):
     item = TodoItems.objects.get(id=item_id)
     item.delete()
-    return HttpResponseRedirect('/todo/')
+    return redirect(reverse('list'))
