@@ -1,4 +1,5 @@
-from single_ll_extra_functions import NthNodeFromLast, MiddleNode, CountTheElement
+from single_ll_extra_functions import (NthNodeFromLast, MiddleNode,
+                                       CountTheElement, RemoveDuplicates)
 
 
 class Node():
@@ -112,16 +113,23 @@ class MyLinkedList:
 # 1 -> 2 -> 3 -> 4 -> None
 obj = MyLinkedList()
 obj.get(0)
-obj.addAtIndex(0, 10)
-obj.addAtIndex(0, 20)
-obj.addAtIndex(1, 30)
-obj.PrintValues()
+obj.addAtHead(10)
+obj.addAtHead(10)
+obj.addAtHead(10)
+obj.addAtIndex(3, 20)
+obj.addAtIndex(4, 30)
+obj.addAtIndex(5, 30)
+obj.addAtTail(30)
 obj.addAtTail(50)
+obj.addAtTail(50)
+obj.PrintValues()
 print('The length of LL is:', obj.FindLength(obj.head))
 print('The element 30 is present?', obj.FindElement(obj.head, 30))
 obj.PrintValues()
 print('The element from the end of the LL at node 3 is:',
       NthNodeFromLast(obj.head, 3))
 # print(MiddleNode(obj.head))
-obj.addAtTail(30)
 print('Count of 30 is:', CountTheElement(obj.head, 30))
+RemoveDuplicates(obj.head)
+print('the sorted list is')
+obj.PrintValues()

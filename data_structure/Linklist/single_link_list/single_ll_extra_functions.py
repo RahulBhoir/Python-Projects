@@ -36,3 +36,15 @@ def CountTheElement(head, number):
             count_of_number += 1
         head = head.next
     return count_of_number
+
+
+def RemoveDuplicates(head):
+    if head is None:
+        return 'the list is empty'
+    while head.next != None:
+        print(head.next.val)
+        if head.val == head.next.val:
+            head.next = head.next.next
+        else:
+            head = head.next
+    return
