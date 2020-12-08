@@ -1,5 +1,6 @@
 from single_ll_extra_functions import (NthNodeFromLast, MiddleNode,
-                                       CountTheElement, RemoveDuplicates)
+                                       CountTheElement, RemoveDuplicates,
+                                       CheckLoop)
 
 
 class Node():
@@ -133,3 +134,4 @@ print('Count of 30 is:', CountTheElement(obj.head, 30))
 RemoveDuplicates(obj.head)
 print('the sorted list is')
 obj.PrintValues()
+print('is there a loop in the linked list?', CheckLoop(obj.head))

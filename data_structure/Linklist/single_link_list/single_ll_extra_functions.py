@@ -48,3 +48,30 @@ def RemoveDuplicates(head):
         else:
             head = head.next
     return
+
+
+# check if the linked list has loop or not
+# Floyd’s Cycle-Finding Algorithm
+def CheckLoop(head):
+    if head is None:
+        return 'the list is empty'
+    slow_ptr = head
+    fast_ptr = head
+    while slow_ptr and fast_ptr and fast_ptr.next:
+        slow_ptr = slow_ptr.next
+        fast_ptr = fast_ptr.next.next
+        if slow_ptr == fast_ptr:
+            return True
+    return False
+
+
+def CheckLoop_v2(head):
+    if head is None:
+        return 'the list is empty'
+    hash_set = set()
+    while head.next is not None:
+        if head in hash_set:
+            return True
+        hash_set.add(head)
+        head = head.next
+    return False
