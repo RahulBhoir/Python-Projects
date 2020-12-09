@@ -2,6 +2,7 @@
 
 # Given a Linked List and a number n,
 # returns the value at the n’th node from the end of the Linked List.
+
 def NthNodeFromLast(head, n):
     if head is None:
         return 'list is empty'
@@ -75,3 +76,16 @@ def CheckLoop_v2(head):
         hash_set.add(head)
         head = head.next
     return False
+
+
+def ReverseList(head):
+    if head is None:
+        return 'the list is empty'
+    prev_ptr = None
+    curr_ptr = head
+    while curr_ptr != None:
+        next_ptr = curr_ptr.next
+        curr_ptr.next = prev_ptr
+        prev_ptr = curr_ptr
+        curr_ptr = next_ptr
+    return prev_ptr
