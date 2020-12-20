@@ -1,6 +1,6 @@
-from single_ll_extra_functions import (NthNodeFromLast, MiddleNode,
-                                       CountTheElement, RemoveDuplicates,
-                                       CheckLoop, ReverseList)
+from list_functions import (NthNodeFromLast, MiddleNode,
+                            CountTheElement, RemoveDuplicates,
+                            CheckLoop, ReverseList, LastElementToFirst, PrintValues)
 
 
 class Node():
@@ -81,17 +81,6 @@ class MyLinkedList:
             temp = temp.next
         return
 
-    def PrintValues(self):
-        if self.head is None:
-            return 'list is empty :('
-        print('Element in LL are:')
-        temp = self.head
-        while temp != None:
-            print(temp.val, end=' ')
-            temp = temp.next
-        print()
-        return
-
     def FindLength(self, temp):
         if temp is None:
             return 'list is empty :('
@@ -120,10 +109,10 @@ obj = MyLinkedList()
 # obj.addAtIndex(3, 20)
 # obj.addAtIndex(4, 30)
 # obj.addAtIndex(5, 30)
-obj.addAtTail(30)
-obj.addAtTail(10)
-obj.addAtTail(30)
-obj.addAtHead(20)
+obj.addAtTail(1)
+obj.addAtTail(2)
+obj.addAtTail(3)
+obj.addAtTail(4)
 # obj.addAtTail(50)
 # obj.addAtTail(50)
 # obj.PrintValues()
@@ -136,8 +125,10 @@ obj.addAtHead(20)
 # print('Count of 30 is:', CountTheElement(obj.head, 30))
 # RemoveDuplicates(obj.head)
 # print('the sorted list is')
-obj.PrintValues()
+PrintValues(obj.head)
 # print('is there a loop in the linked list?', CheckLoop(obj.head))
 # print(Palindrome(obj.head, obj.head))
 # obj.head = ReverseList(obj.head)
 # obj.PrintValues()
+obj.head = LastElementToFirst(obj.head)
+PrintValues(obj.head)

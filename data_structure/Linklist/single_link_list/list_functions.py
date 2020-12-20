@@ -3,17 +3,31 @@
 # Given a Linked List and a number n,
 # returns the value at the n’th node from the end of the Linked List.
 
+
+LIST_IS_EMPTY = 'list is empty :('
+
+
+def PrintValues(head):
+    if head is None:
+        return LIST_IS_EMPTY
+    print('Element in LL are:')
+    temp = head
+    while temp != None:
+        print(temp.val, end=' ')
+        temp = temp.next
+    print()
+    return
+
+
 def NthNodeFromLast(head, n):
     if head is None:
-        return 'list is empty'
+        return LIST_IS_EMPTY
     main_ptr = head
     for _ in range(n):
         head = head.next
-        value = head.val
     while head != None:
         head = head.next
         main_ptr = main_ptr.next
-        main = main_ptr.val
     return main_ptr.val
 
 
@@ -30,7 +44,7 @@ def MiddleNode(head):
 # count number of occurrences of given key in linked list.
 def CountTheElement(head, number):
     if head is None:
-        return 'the list is empty'
+        return LIST_IS_EMPTY
     count_of_number = 0
     while head != None:
         if head.val is number:
@@ -41,7 +55,7 @@ def CountTheElement(head, number):
 
 def RemoveDuplicates(head):
     if head is None:
-        return 'the list is empty'
+        return LIST_IS_EMPTY
     while head.next != None:
         print(head.next.val)
         if head.val == head.next.val:
@@ -55,7 +69,7 @@ def RemoveDuplicates(head):
 # Floyd’s Cycle-Finding Algorithm
 def CheckLoop(head):
     if head is None:
-        return 'the list is empty'
+        return LIST_IS_EMPTY
     slow_ptr = head
     fast_ptr = head
     while slow_ptr and fast_ptr and fast_ptr.next:
@@ -68,7 +82,7 @@ def CheckLoop(head):
 
 def CheckLoop_v2(head):
     if head is None:
-        return 'the list is empty'
+        return LIST_IS_EMPTY
     hash_set = set()
     while head.next is not None:
         if head in hash_set:
@@ -78,9 +92,10 @@ def CheckLoop_v2(head):
     return False
 
 
+# reverse a single link list
 def ReverseList(head):
     if head is None:
-        return 'the list is empty'
+        return LIST_IS_EMPTY
     prev_ptr = None
     curr_ptr = head
     while curr_ptr != None:
@@ -89,3 +104,18 @@ def ReverseList(head):
         prev_ptr = curr_ptr
         curr_ptr = next_ptr
     return prev_ptr
+
+
+# bring last element to front
+def LastElementToFirst(head):
+    if head is None:
+        return LIST_IS_EMPTY
+    temp = head
+    while temp.next != None:
+        if temp.next.next == None:
+            last_node = temp.next
+            temp.next = None
+            last_node.next = head
+            head = last_node
+            return head
+        temp = temp.next
