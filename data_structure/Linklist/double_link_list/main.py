@@ -29,21 +29,23 @@ class DoubleLinkList():
     def DeleteNode(self, val):
         if self.head is None:
             return LIST_IS_EMPTY
+        # deleting element at head
         if self.head.val == val:
             self.head = self.head.next
             return
         else:
             temp = self.head
+            # deleting element at middle
             while temp.next != None:
-                if temp.next.val == val:
-                    prev_node = temp.next.prev
-                    next_node = temp.next.next
-                    temp.next = next_node
-                    if next_node is not None:
-                        next_node.prev = prev_node
-                        return
+                if temp.val == val:
+                    prev_node = temp.prev
+                    next_node = temp.next
+                    prev_node.next = next_node
+                    next_node.prev = prev_node
                     return
                 temp = temp.next
+            # deleting element at tail
+            temp.prev.next = None
         return
 
     def InsertAtHead(self, data):
@@ -65,6 +67,10 @@ obj.InsertNodeAtTail(3)
 obj.InsertNodeAtTail(4)
 PrintValues(obj.head)
 obj.DeleteNode(4)
+print('after deleting 4')
+PrintValues(obj.head)
+obj.DeleteNode(2)
+print('after deleting 2')
 PrintValues(obj.head)
 obj.InsertAtHead(56)
 PrintValues(obj.head)

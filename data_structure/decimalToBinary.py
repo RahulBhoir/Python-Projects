@@ -7,6 +7,7 @@ def DecimalToBinary(decimal_num):
     if '.' in decimal:
         index = decimal.index('.')
         power = len(decimal) - index - 1
+        print(power)
         decimal_num = int(decimal_num * (2**power))
 
     while True:
@@ -15,8 +16,10 @@ def DecimalToBinary(decimal_num):
         decimal_num = int(decimal_num / 2)
         if decimal_num <= 0:
             break
-
     bin_num = bin_num[::-1]
+
+    # pythonic way
+    # bin_num = bin(decimal_num)[2:]
     return int(bin_num)/(10**power)
 
 

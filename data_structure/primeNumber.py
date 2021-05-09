@@ -8,4 +8,4 @@ def IsPrimeNumber(number):
     return True
 
 
-print(IsPrimeNumber(97))
+print(IsPrimeNumber(11))

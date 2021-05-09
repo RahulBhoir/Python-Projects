@@ -8,5 +8,7 @@ def IsPanlindrone(number):
     else:
         return False
 
+    # return True if str(number) == str(number)[::-1] else False
 
-print(IsPanlindrone(121))
+
+print(IsPanlindrone(1221))

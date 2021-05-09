@@ -24,15 +24,6 @@ def ReverseList(head):
         temp.prev = next_node
         if next_node is None:
             head = temp
+            return head
         temp = next_node
     return head
-
-def DeleteKeyNode(head,data):
-    if head is None:
-        return LIST_IS_EMPTY
-    temp = head 
-    while temp != None:
-        if temp.val == data:
-            prev_node = temp.prev
-            next_node = temp.next
-            temp = temp.next

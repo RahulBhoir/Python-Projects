@@ -13,12 +13,13 @@ def PrintValues(head):
     print('Element in LL are:')
     temp = head
     while temp != None:
-        print(temp.val, end=' ')
+        print(temp.val, end=' --> ')
         temp = temp.next
-    print()
+    print('NULL')
     return
 
 
+# find the Nth node from last
 def NthNodeFromLast(head, n):
     if head is None:
         return LIST_IS_EMPTY
@@ -47,12 +48,13 @@ def CountTheElement(head, number):
         return LIST_IS_EMPTY
     count_of_number = 0
     while head != None:
-        if head.val is number:
+        if head.val == number:
             count_of_number += 1
         head = head.next
     return count_of_number
 
 
+# remove duplicates from sorted linked list
 def RemoveDuplicates(head):
     if head is None:
         return LIST_IS_EMPTY
@@ -111,11 +113,29 @@ def LastElementToFirst(head):
     if head is None:
         return LIST_IS_EMPTY
     temp = head
-    while temp.next != None:
-        if temp.next.next == None:
-            last_node = temp.next
-            temp.next = None
-            last_node.next = head
-            head = last_node
-            return head
+    # while temp.next != None:
+    #     if temp.next.next == None:
+    #         last_node = temp.next
+    #         temp.next = None
+    #         last_node.next = head
+    #         head = last_node
+    #         return head
+    #     temp = temp.next
+
+    while temp.next.next != None:
+        temp = temp.next
+    temp.next.next = head
+    head = temp.next
+    temp.next = None
+    return head
+
+
+# swapping node values
+def SwapData(head, data1, data2):
+    temp = head
+    while temp is not None:
+        if temp.data == data1:
+            temp.data = data2
+        elif temp.data == data2:
+            temp.data = data1
         temp = temp.next
