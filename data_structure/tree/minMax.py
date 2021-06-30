@@ -11,12 +11,22 @@ class Node():
 def MinNode(root):
     if root is None:
         return
-    if root.left is None:
-        print(root.data)
-        return
-    MinNode(root.left)
+    temp = root
+    while temp.left != None:
+        temp = temp.left
+    print(temp.data)
 
 
+# returing max value
+# def MaxNode(root):
+#     if root is None:
+#         return -1
+#     max_element = MaxNode(root.right)
+#     if max_element == -1:
+#         return root.data
+#     return max_element
+
+# printing max value
 def MaxNode(root):
     if root is None:
         return
